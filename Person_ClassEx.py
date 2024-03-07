@@ -59,6 +59,11 @@ class Person:
             self.age = args[1]
             self.blood = args[2]
             print("I am a Person constructor method that has three arguements")
+        elif len(args) == 2 and len(kwargs) == 1:
+            self.name = args[0]
+            self.age = args[1]
+            self.blood=kwargs["blood"]#딕셔너리라서
+            print("I am a Person that is kwargs_constructor method that has 3 arguements")
         #• self : ‘자기 자신’을 나타내는 딕셔너리, 주소를 참조함
         #• 멤버변수나 멤버메서드에 접근할 때 self.<식별자> 형태로 접근
     def setBlood(self,blood : str):
@@ -80,6 +85,7 @@ class Person:
     def getAge(self):
         return self.age
     
+    
     def breathe(self):
         print("A person is breathing.")
         print("self.name=%s" %self.name)
@@ -89,6 +95,9 @@ class Person:
         print("A person is speaking.")
         print("self.age=%d" % self.age)
         print()
+    
+    def showData(self):
+        print("name = %s, age = %d, blood = %c" %(self.name,self.age,self.blood))
     # : 캡슐화 
 '''
 붕어빵 틀은 클래스이며, 이 틀의 형태로 구워진 붕어빵은 바로 객체입니다. 
@@ -129,6 +138,7 @@ if __name__ == "__main__":
     #A person is speaking.
     #self.age=0
     print("\n-------------------")
+    
     #wonbin = Person("원빈",39,blood='A')#"원빈",39 : *args에 튜플꼴로 넣어짐    blood='A' : **kwargs에 딕셔너리꼴로 넣어짐
     wonbin = Person("원빈",39,'A')
     print()
@@ -137,3 +147,17 @@ if __name__ == "__main__":
     print("wonbin.age = %d" % wonbin.getAge())#wonbin.age = 39
     print()
     print("wonbin.blood = %c" % wonbin.getBlood())#wonbin.blood = A
+    print("\n-------------------")
+    
+    carl = Person("칼",35,blood='B')
+    print()
+    print("carl.getName() = %s" %carl.getName())#carl.getName() = 칼
+    print()
+    print("carl.age = %d" % carl.getAge())#carl.age = 35
+    print()
+    print("carl.blood = %c" % carl.getBlood())#carl.blood = B
+    print("\n-------------------")
+    wonbin.showData()#name = 원빈, age = 39, blood = A
+    carl.showData()#name = 칼, age = 35, blood = B
+    
+    

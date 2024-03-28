@@ -41,9 +41,9 @@ class Rectangle(Shape):#자식클래스
         sy2=self.cy + self.height/2
         #오른쪽 위 점
         self.setPen()
-        self.myTurtle.penup()#거북이 꼬리를 올림
+        self.myTurtle.penup()#거북이 꼬리를 올림,펜 긋고 움직임
         self.myTurtle.goto(sx1,sy1)
-        self.myTurtle.pendown()#거북이 꼬리를 올림
+        self.myTurtle.pendown()#거북이 꼬리를 올림,펜 뗌
         self.myTurtle.goto(sx1,sy2)
         self.myTurtle.goto(sx2,sy2)
         self.myTurtle.goto(sx2,sy1)
